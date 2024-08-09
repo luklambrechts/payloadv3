@@ -25,14 +25,14 @@ export const Footer: GlobalConfig = {
           label: 'Link',
           type: 'text',
         },
-        {
-          name: 'copyrightNotice',
-          label: 'CopyRight Notice',
-          type: 'text',
-        },
       ],
       minRows: 1, // Min number of nav items
       maxRows: 5, // Max number of nav items
+    },
+    {
+      name: 'copyrightNotice',
+      label: 'CopyRight Notice',
+      type: 'text',
     },
   ],
 }
