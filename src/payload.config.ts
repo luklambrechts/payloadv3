@@ -8,6 +8,7 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { triggerAsyncId } from 'async_hooks'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -28,5 +29,21 @@ export default buildConfig({
   sharp,
   plugins: [
     // storage-adapter-placeholder
+    s3Storage({
+      collections: {
+        [mediaSlug]: true,
+        [mediaWithPrefixSlug]: {
+          prefix,
+        }
+      },
+      bucket: process.env.S3_BUCKET,
+      config: {
+        credentials: {
+          accessKeyId: process.env.S3_ACCESS_KEY_ID,
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+        },
+        region: process.env.s3_Region,
+      }
+    })
   ],
 })
