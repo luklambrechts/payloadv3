@@ -9,6 +9,7 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { triggerAsyncId } from 'async_hooks'
+import { s3Storage } from '@payloadcms/storage-s3'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -31,10 +32,9 @@ export default buildConfig({
     // storage-adapter-placeholder
     s3Storage({
       collections: {
-        [mediaSlug]: true,
-        [mediaWithPrefixSlug]: {
-          prefix,
-        }
+        'media': {
+          prefix: 'media',
+        },
       },
       bucket: process.env.S3_BUCKET,
       config: {
@@ -43,7 +43,7 @@ export default buildConfig({
           secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
         },
         region: process.env.s3_Region,
-      }
-    })
+      },
+    }),
   ],
 })
