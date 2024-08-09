@@ -1,0 +1,28 @@
+import { CollectionConfig } from "payload";
+
+export const Pages: CollectionConfig = {
+  slug: 'pages',
+  fields: [
+    { 
+      name: 'name', // only used internal
+      label: 'Name',
+      type: 'text',
+      required: true
+    },
+    {
+      name: 'slug',
+      label: 'Slug',
+      type: 'text',
+      admin: {
+        position: 'sidebar', // defines the place on the admin panel
+      },
+      required: true
+    },
+    { 
+      name: 'layout',
+      label: 'Layout',
+      type: 'blocks',
+      blocks: []  // blocks schema's will go in here
+    }
+  ]
+}
