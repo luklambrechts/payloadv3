@@ -11,6 +11,8 @@ import { Media } from './collections/Media'
 import { triggerAsyncId } from 'async_hooks'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { Pages } from './collections/Pages'
+import { Header } from './globals/header'
+import { Footer } from './globals/footer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -20,6 +22,10 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [Users, Media, Pages],
+  globals: [
+    Header,
+    Footer
+  ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
