@@ -22,13 +22,13 @@ dependencies:
     specifier: beta
     version: 3.0.0-beta.77(@faceless-ui/modal@3.0.0-beta.2)(@faceless-ui/scroll-info@2.0.0-beta.0)(@lexical/headless@0.17.0)(@lexical/link@0.17.0)(@lexical/list@0.17.0)(@lexical/mark@0.17.0)(@lexical/markdown@0.17.0)(@lexical/react@0.17.0)(@lexical/rich-text@0.17.0)(@lexical/selection@0.17.0)(@lexical/table@0.17.0)(@lexical/utils@0.17.0)(@payloadcms/next@3.0.0-beta.77)(@payloadcms/translations@3.0.0-beta.77)(@payloadcms/ui@3.0.0-beta.77)(lexical@0.17.0)(payload@3.0.0-beta.77)(react-dom@19.0.0-rc-fb9a90fa48-20240614)(react@19.0.0-rc-fb9a90fa48-20240614)
   '@payloadcms/storage-s3':
-    specifier: 3.0.0-beta.29
-    version: 3.0.0-beta.29(payload@3.0.0-beta.77)
+    specifier: beta
+    version: 3.0.0-beta.77(payload@3.0.0-beta.77)
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
   graphql:
-    specifier: ^16.8.1
+    specifier: ^16.9.0
     version: 16.9.0
   next:
     specifier: 15.0.0-canary.53
@@ -37,10 +37,10 @@ dependencies:
     specifier: beta
     version: 3.0.0-beta.77(@swc/core@1.7.6)(@swc/types@0.1.12)(graphql@16.9.0)(typescript@5.5.4)
   react:
-    specifier: ^19.0.0-rc-6230622a1a-20240610
+    specifier: 19.0.0-rc-fb9a90fa48-20240614
     version: 19.0.0-rc-fb9a90fa48-20240614
   react-dom:
-    specifier: ^19.0.0-rc-6230622a1a-20240610
+    specifier: 19.0.0-rc-fb9a90fa48-20240614
     version: 19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614)
   sharp:
     specifier: 0.32.6
@@ -48,7 +48,7 @@ dependencies:
 
 devDependencies:
   '@types/node':
-    specifier: ^20.12.12
+    specifier: ^20.14.14
     version: 20.14.14
   '@types/react':
     specifier: npm:types-react@19.0.0-rc.0
@@ -57,7 +57,7 @@ devDependencies:
     specifier: npm:types-react-dom@19.0.0-rc.0
     version: /types-react-dom@19.0.0-rc.0
   eslint:
-    specifier: ^8
+    specifier: ^8.57.0
     version: 8.57.0
   eslint-config-next:
     specifier: 15.0.0-canary.53
@@ -1869,8 +1869,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@payloadcms/plugin-cloud-storage@3.0.0-beta.29(@aws-sdk/client-s3@3.627.0)(@aws-sdk/lib-storage@3.627.0)(payload@3.0.0-beta.77):
-    resolution: {integrity: sha512-3Wo1B7xdt4LwxWjOtDV+yp66Y6yb54lYP6l3rbbqkYUKQkqCqhm9AhOHilafO98rrfQxA2V/n7BE4KnQkJBUTA==}
+  /@payloadcms/plugin-cloud-storage@3.0.0-beta.77(@aws-sdk/client-s3@3.627.0)(@aws-sdk/lib-storage@3.627.0)(payload@3.0.0-beta.77):
+    resolution: {integrity: sha512-UvSN1RIjrKPM98HxavY8fxR/U2I+yuwGBbDLYxYpwOhkkNFaLeefx2mV5qI+VcM46xJNdi65fW357OhalsQvYw==}
     peerDependencies:
       '@aws-sdk/client-s3': ^3.525.0
       '@aws-sdk/lib-storage': ^3.525.0
@@ -1878,7 +1878,7 @@ packages:
       '@azure/storage-blob': ^12.11.0
       '@google-cloud/storage': ^7.7.0
       '@vercel/blob': ^0.22.3
-      payload: 3.0.0-beta.29
+      payload: 3.0.0-beta.77
     peerDependenciesMeta:
       '@aws-sdk/client-s3':
         optional: true
@@ -1971,15 +1971,15 @@ packages:
       uuid: 10.0.0
     dev: false
 
-  /@payloadcms/storage-s3@3.0.0-beta.29(payload@3.0.0-beta.77):
-    resolution: {integrity: sha512-d5kTDBE68VxDyLHmWAFBlxwoNrAYb62h986WzT8wTriU1iAQTdQpQ8uR7NbsWE6UbHmbBweKfBWH0/qHiM6qjQ==}
-    engines: {node: '>=18.20.2'}
+  /@payloadcms/storage-s3@3.0.0-beta.77(payload@3.0.0-beta.77):
+    resolution: {integrity: sha512-RnjpHI/dTgoYJ7WN8LoTUPCngMCnx+vwFCEk/i3I2Ev3yiRQT0yicUfvgAE4fPC7S+YPXVbHis0/0CmknIcC7w==}
+    engines: {node: ^18.20.2 || >=20.9.0}
     peerDependencies:
-      payload: 3.0.0-beta.29
+      payload: 3.0.0-beta.77
     dependencies:
       '@aws-sdk/client-s3': 3.627.0
       '@aws-sdk/lib-storage': 3.627.0(@aws-sdk/client-s3@3.627.0)
-      '@payloadcms/plugin-cloud-storage': 3.0.0-beta.29(@aws-sdk/client-s3@3.627.0)(@aws-sdk/lib-storage@3.627.0)(payload@3.0.0-beta.77)
+      '@payloadcms/plugin-cloud-storage': 3.0.0-beta.77(@aws-sdk/client-s3@3.627.0)(@aws-sdk/lib-storage@3.627.0)(payload@3.0.0-beta.77)
       payload: 3.0.0-beta.77(@swc/core@1.7.6)(@swc/types@0.1.12)(graphql@16.9.0)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@azure/abort-controller'

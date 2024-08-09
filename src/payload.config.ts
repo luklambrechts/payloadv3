@@ -32,7 +32,7 @@ export default buildConfig({
     // storage-adapter-placeholder
     s3Storage({
       collections: {
-        'media': {
+        media: {
           prefix: 'media',
         },
       },
@@ -42,7 +42,9 @@ export default buildConfig({
           accessKeyId: process.env.S3_ACCESS_KEY_ID,
           secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
         },
-        region: process.env.s3_Region,
+        region: process.env.S3_REGION,
+        endpoint: process.env.S3_ENDPOINT,
+        forcePathStyle: true,
       },
     }),
   ],
