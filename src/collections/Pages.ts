@@ -18,11 +18,11 @@ export const Pages: CollectionConfig = {
       },
       required: true
     },
-    { 
-      name: 'layout',
-      label: 'Layout',
-      type: 'blocks',
-      blocks: []  // blocks schema's will go in here
-    }
+    // { 
+    //   name: 'layout',
+    //   label: 'Layout',
+    //   type: 'blocks',
+    //   blocks: []  // blocks schema's will go in here
+    // }
   ]
 }

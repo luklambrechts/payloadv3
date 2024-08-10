@@ -24,7 +24,10 @@ export const Header: GlobalConfig = {
           label: 'Link',
           type: 'text',
         }
-      ]
+      ],
+      minRows: 1, // Minimum number of nav items
+      maxRows: 5, // Maximum number of nav items,
+      required: true
     }
   ],
 }
