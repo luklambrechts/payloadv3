@@ -28,6 +28,7 @@ export const Footer: GlobalConfig = {
       ],
       minRows: 1, // Min number of nav items
       maxRows: 5, // Max number of nav items
+      required: true,
     },
     {
       name: 'copyrightNotice',

@@ -151,13 +151,11 @@ export interface Header {
 export interface Footer {
   id: string;
   logo: string | Media;
-  nav?:
-    | {
-        label?: string | null;
-        link?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  nav: {
+    label?: string | null;
+    link?: string | null;
+    id?: string | null;
+  }[];
   copyrightNotice?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
