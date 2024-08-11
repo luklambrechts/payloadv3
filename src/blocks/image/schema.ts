@@ -1,10 +1,10 @@
 export const Image: Block = {
   slug: 'image',
-  fields: {
+  fields:[{
     name: 'image',
     label: 'Image',
     type: 'upload',
     relationTo: 'media',
     required: true,
-  },
+  },]
 }
