@@ -5,7 +5,7 @@ import { getPayloadHMR } from '@payloadcms/next/utilities'
 import React, { cache } from 'react'
 
 import { Page as PageType } from '@/payload-types' // manueel toegevoegd
-import { Blocks } from '@/utils/RenderBlocks'
+import { RenderBlocks } from '@/utils/RenderBlocks'
 import { notFound } from 'next/navigation'
 
 // helper function to get the pagedocument by slug
@@ -52,7 +52,7 @@ export default async function Page({ params: { slug = 'index' } }) {
   }
   return (
     <article className="pt-16 pb-24">
-      <Blocks blocks={page.layout} />
+      <RenderBlocks blocks={page.layout} />
     </article>
   )
 }
