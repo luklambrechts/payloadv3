@@ -1,11 +1,5 @@
-import { BannerBlock } from '@/blocks/Banner'
-import { CallToActionBlock } from '@/blocks/CallToAction'
-import { CodeBlock, CodeBlockProps } from '@/blocks/Code'
-import { MediaBlock } from '@/blocks/MediaBlock'
 import React, { Fragment, JSX } from 'react'
-import { CMSLink } from 'src/app/components/Link'
 import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
-import type { BannerBlock as BannerBlockProps } from 'src/payload-types'
 
 import {
   IS_BOLD,
@@ -16,15 +10,13 @@ import {
   IS_SUPERSCRIPT,
   IS_UNDERLINE,
 } from './nodeFormat'
-import type { Page } from '../../../payload-types'
+import type { Page } from '@/payload-types'
 
 export type NodeTypes =
   | DefaultNodeTypes
   | SerializedBlockNode<
       | Extract<Page['layout'][0], { blockType: 'cta' }>
       | Extract<Page['layout'][0], { blockType: 'mediaBlock' }>
-      | BannerBlockProps
-      | CodeBlockProps
     >
 
 type Props = {
@@ -105,27 +97,6 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
             return null
           }
 
-          switch (blockType) {
-            case 'cta':
-              return <CallToActionBlock key={index} {...block} />
-            case 'mediaBlock':
-              return (
-                <MediaBlock
-                  className="col-start-1 col-span-3"
-                  imgClassName="m-0"
-                  key={index}
-                  {...block}
-                  captionClassName="mx-auto max-w-[48rem]"
-                  enableGutter={false}
-                />
-              )
-            case 'banner':
-              return <BannerBlock className="col-start-2 mb-4" key={index} {...block} />
-            case 'code':
-              return <CodeBlock className="col-start-2" key={index} {...block} />
-            default:
-              return null
-          }
         } else {
           switch (node.type) {
             case 'linebreak': {
@@ -184,21 +155,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                 </blockquote>
               )
             }
-            case 'link': {
-              const fields = node.fields
 
-              return (
-                <CMSLink
-                  key={index}
-                  newTab={Boolean(fields?.newTab)}
-                  reference={fields.doc as any}
-                  type={fields.linkType === 'internal' ? 'reference' : 'custom'}
-                  url={fields.url}
-                >
-                  {serializedChildren}
-                </CMSLink>
-              )
-            }
 
             default:
               return null
