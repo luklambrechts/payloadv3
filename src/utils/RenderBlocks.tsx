@@ -1,9 +1,11 @@
 import CoverBlockServer from '@/blocks/cover/Server'
+import ImageBlockServer from '@/blocks/image/Server'
 import { Page } from '@/payload-types'
 import React, { Fragment } from 'react'
 
 const blockComponents = {
-  cover: CoverBlockServer
+  cover: CoverBlockServer,
+  image: ImageBlockServer,
 }
 
 export const RenderBlocks: React.FC<{ blocks: Page['layout'][0][] }> = (props) => {
