@@ -51,8 +51,8 @@ export default async function Page({ params: { slug = 'index' } }) {
     return notFound()
   }
   return (
-    <article className="pt-16 pb-24">
+    <div className="pt-16 pb-24">
       <RenderBlocks blocks={page.layout} />
-    </article>
+    </div>
   )
 }
