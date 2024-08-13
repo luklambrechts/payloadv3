@@ -1,4 +1,4 @@
-import type { Metadata } from 'react'
+// import type { Metadata } from '@payloadcms/types'
 
 import config from '@payload-config'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
