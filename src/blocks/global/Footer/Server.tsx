@@ -14,8 +14,8 @@ export default async function FooterServer() {
         {/* fill 100% of the parent container with the image  */}
         <div className="relative w-64 h-20">
           <Image
-            alt={typeof footer.logo === 'string' ? '' : footer.logo?.alt}
-            src={typeof footer.logo === 'string' ? '' : footer.logo?.url || ''}
+            alt={typeof footer.logo === 'string' ? '' : footer.logo.alt}
+            src={typeof footer.logo === 'string' ? '' : footer.logo.url || ''}
             fill
             className="object-contain"
           />
