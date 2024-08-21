@@ -25,7 +25,7 @@ export const Pages: CollectionConfig = {
       name: 'layout',
       label: 'Layout',
       type: 'blocks',
-      blocks: [Cover, RichText, Image],
+      blocks: [Cover, RichText],
       required: true, // blocks schema's will go in here
     },
   ],

@@ -91,7 +91,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
         if (node.type === 'block') {
           const block = node.fields
 
-          const blockType = block?.blockType
+          const blockType = (block as { blockType?: string })?.blockType
 
           if (!block || !blockType) {
             return null
